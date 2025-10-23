@@ -1,0 +1,76 @@
+/* Локальные стили для страницы «Контакты» */
+.hero-contacts{
+  min-height:56vh;
+  background:
+    radial-gradient(900px 600px at 14% 10%, rgba(56,189,248,.12), transparent 60%),
+    radial-gradient(1000px 640px at 90% -10%, rgba(125,211,252,.08), transparent 70%);
+}
+
+.quick{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px }
+.q.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 14px; border-radius:999px;
+  background: rgba(56,189,248,.10); border:1px solid rgba(56,189,248,.28);
+  color:#bfefff; font-weight:600;
+}
+
+.lead-form{ margin-top: 16px }
+.lead-form .grid{ display:grid; grid-template-columns: repeat(12,1fr); gap: 14px }
+.f{ grid-column: span 6; display:flex; flex-direction:column; gap:8px }
+.f.span-2{ grid-column: span 12 }
+.f > span{ font-weight:600 }
+.f input, .f select, .f textarea{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 12px;
+  padding: 12px 12px;
+  color: #fff;
+  outline: none;
+  transition: border .2s, box-shadow .2s, background .2s;
+}
+.f input::placeholder, .f textarea::placeholder{ color:#9fb9c9 }
+.f input:focus, .f select:focus, .f textarea:focus{
+  border-color: rgba(56,189,248,.5);
+  box-shadow: 0 0 0 3px rgba(56,189,248,.15);
+  background: rgba(255,255,255,.08);
+}
+.checkbox{
+  grid-column: span 12;
+  display:flex; align-items:flex-start; gap:10px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 12px; padding: 12px;
+}
+.checkbox input{ margin-top:3px }
+
+.form-actions{ grid-column: span 12; display:flex; gap:12px; align-items:center }
+.small.muted{ grid-column: span 12; color:#9fb9c9; font-size: 13px }
+
+.hp{ position:absolute; left:-9999px; opacity:0; pointer-events:none }
+
+/* Прелоадер */
+#preloader{
+  position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center;
+  background: radial-gradient(1200px 800px at 50% -10%, rgba(56,189,248,.08), transparent 60%), #0b1020;
+}
+#preloader .drop{ width: 76px; height: 96px; opacity: 0; transform: translateY(-40vh); filter: drop-shadow(0 14px 40px rgba(56,189,248,.35)); }
+#preloader .ripple{
+  position:absolute; width: 8px; height: 8px; border-radius: 999px; left: 50%; top: 50%;
+  transform: translate(-50%, -50%); opacity: 0; border: 2px solid rgba(125,211,252,.55);
+  box-shadow: 0 0 0 2px rgba(56,189,248,.25), inset 0 0 40px rgba(56,189,248,.25);
+}
+#preloader .ripple-2{ border-color: rgba(125,211,252,.35); }
+#preloader .ripple-3{ border-color: rgba(125,211,252,.22); }
+
+/* A11y */
+@media (prefers-reduced-motion: reduce){
+  #preloader{ display:none !important; }
+}
+
+/* Адаптив */
+@media (max-width:1024px){
+  .f{ grid-column: span 12 }
+}
+@media (max-width:768px){
+  .q.pill{ width:100%; justify-content:center }
+}
