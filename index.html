@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fresh Systems — Централизованные системы питьевой воды</title>
+  <meta name="description" content="Проектирование, монтаж и сервис централизованных систем питьевой воды для ЖК, коттеджей и квартир. Лабораторные протоколы. Соответствие СанПиН." />
+  <meta name="color-scheme" content="dark" />
+  <link rel="preload" as="image" href="images/hero-water.jpg" />
+  <link rel="preload" as="video"  href="images/water-bg.mp4" type="video/mp4" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="Fresh Systems — Питьевая вода для вашего дома" />
+  <meta property="og:description" content="Инженерия полного цикла: от анализа воды до сервиса. ЖК, частные дома, квартиры." />
+  <meta property="og:image" content="images/og-cover.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Fresh Systems",
+    "url":"https://your-domain.example",
+    "logo":"https://your-domain.example/images/logo.svg",
+    "sameAs":[]
+  }
+  </script>
+</head>
+<body class="no-video">
+
+  <!-- Фон -->
+  <video id="bgVideo" class="bg-video" autoplay muted loop playsinline preload="auto" poster="images/hero-water.jpg">
+    <source src="images/water-bg.mp4" type="video/mp4" />
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Шапка -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="На главную">FS</a>
+    <nav class="top-nav" aria-label="Основное меню">
+      <a href="technologies.html">Технологии</a>
+      <a href="sanpin.html">СанПиН</a>
+      <a href="taste.html">Почему вода вкусная</a>
+      <a href="services.html">Услуги</a>
+      <a href="contacts.html" class="pill">Оставить заявку</a>
+    </nav>
+    <button class="menu-toggle" id="menuBtn" aria-label="Меню" aria-expanded="false"><span></span></button>
+  </header>
+
+  <!-- Моб. меню -->
+  <nav class="mobile-drawer" id="drawer" hidden aria-label="Мобильное меню">
+    <a href="technologies.html">Технологии</a>
+    <a href="sanpin.html">СанПиН</a>
+    <a href="taste.html">Почему вода вкусная</a>
+    <a href="services.html">Услуги</a>
+    <a href="contacts.html" class="btn primary w-full mt-2">Оставить заявку</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section hero">
+    <div class="container">
+      <div class="hgroup fadein" data-parallax data-speed="0.18">
+        <div class="kicker">Fresh Systems</div>
+        <h1 class="h1">Премиальная питьевая вода <br class="mob-br">в&nbsp;вашем доме</h1>
+        <p class="sub">Проектируем систему по анализу воды, ставим оборудование класса «инжиниринг», подтверждаем качество протоколами. Каждый день — чистая, безопасная и вкусная вода.</p>
+        <div class="actions">
+          <a href="services.html" class="btn primary">Подобрать решение</a>
+          <a href="contacts.html" class="btn ghost">Получить расчёт</a>
+        </div>
+
+        <!-- Соц-доказательства -->
+        <div class="stats">
+          <div class="stat"><span class="num">99.9%</span><span class="cap">удаление примесей NF/RO</span></div>
+          <div class="stat"><span class="num">24/7</span><span class="cap">мониторинг и сервис</span></div>
+          <div class="stat"><span class="num">СанПиН</span><span class="cap">подтверждение протоколами</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Для кого решения -->
+  <section class="section">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">РЕШЕНИЯ</div>
+        <h2 class="h2">Под задачи дома, посёлка или квартиры</h2>
+        <p class="sub">Проектируем по результатам анализа воды и требованиям объекта. Чистая вода — без компромиссов.</p>
+      </div>
+
+      <div class="row mt-3">
+        <a class="card-cta fadein" href="services.html#multi">
+          <div class="card-ill" style="--img:url('images/solutions/multi.jpg')"></div>
+          <div class="card-body">
+            <h3>Многоквартирные дома</h3>
+            <p>Центральные станции, буферные ёмкости, подача на стояки, резервирование контуров.</p>
+            <span class="arrow">Подробнее</span>
+          </div>
+        </a>
+
+        <a class="card-cta fadein" href="services.html#private">
+          <div class="card-ill" style="--img:url('images/solutions/private.jpg')"></div>
+          <div class="card-body">
+            <h3>Частные дома</h3>
+            <p>Компактные станции с умягчением, минерализацией и УФ-обеззараживанием.</p>
+            <span class="arrow">Подробнее</span>
+          </div>
+        </a>
+
+        <a class="card-cta fadein" href="services.html#apartment">
+          <div class="card-ill" style="--img:url('images/solutions/apartment.jpg')"></div>
+          <div class="card-body">
+            <h3>Квартиры</h3>
+            <p>Индивидуальные модули под мойку, питьевые фонтанчики, пост-карбонизация по вкусу.</p>
+            <span class="arrow">Подробнее</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Почему вкусная -->
+  <section class="section">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">ПОЧЕМУ ВОДА ВКУСНАЯ</div>
+        <h2 class="h2">Сбалансированная минерализация и свежесть</h2>
+        <p class="sub">Контролируем минералы, удаляем запахи и органику, корректируем вкус пост-фильтрами. Результат — мягкий, «чистый» профиль без посторонних нот.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-6 fadein">
+          <div class="glass">
+            <h3>Инженерная карта вкуса</h3>
+            <p>Подбираем солевой состав под задачу заказчика: от нейтрального до «альпийского» профиля.</p>
+          </div>
+        </div>
+        <div class="col-6 fadein">
+          <div class="glass">
+            <h3>Стабильность 365 дней</h3>
+            <p>Автоматический контроль потока, давления и ресурса — вкус без «скачков» от сезона к сезону.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок доверия -->
+  <section class="section">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">ДОВЕРИЕ</div>
+        <h2 class="h2">Качество подтверждаем документами</h2>
+        <p class="sub">Каждый запуск — с протоколом лаборатории и чек-листом по СанПиН. По запросу — сравнение с бутилированной.</p>
+      </div>
+      <div class="logos fadein" aria-label="Партнёры и бренды оборудования">
+        <span class="logo">Pentair</span>
+        <span class="logo">Grundfos</span>
+        <span class="logo">Danfoss</span>
+        <span class="logo">Dow</span>
+        <span class="logo">Ebara</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Процесс -->
+  <section class="section">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">КАК МЫ РАБОТАЕМ</div>
+        <h2 class="h2">От анализа воды — к стабильному вкусу</h2>
+      </div>
+      <ol class="steps fadein">
+        <li><span>1</span> Анализ воды, замеры напоров/дебитов</li>
+        <li><span>2</span> Тех. концепция, подбор схемы NF/RO и узлов</li>
+        <li><span>3</span> Проект, поставка, монтаж</li>
+        <li><span>4</span> ПНР, лабораторные протоколы</li>
+        <li><span>5</span> Сервис 24/7 и регулярные пробы</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Финальный CTA -->
+  <section class="section cta">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">СВЯЖИТЕСЬ С НАМИ</div>
+        <h2 class="h2">Обсудим ваш объект за 20 минут</h2>
+        <p class="sub">Расскажите про дом и пожелания по вкусу воды — подготовим концепцию и ориентировочный бюджет.</p>
+        <div class="actions">
+          <a href="contacts.html" class="btn primary">Оставить заявку</a>
+          <a href="services.html" class="btn ghost">Услуги и цены</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="minor">© 2025 Fresh Systems</div>
+      <div class="minor">Москва</div>
+      <a class="minor" href="privacy.html">Политика</a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Видео (мобилка → статичный фон)
+    (function(){
+      const isMobile = matchMedia('(max-width: 768px)').matches;
+      const v = document.getElementById('bgVideo');
+      if(!v) return;
+      const ok = ()=>{ document.body.classList.remove('no-video'); v.play?.().catch(()=>{}); };
+      if(isMobile){
+        document.body.classList.add('mobile-bg');
+        v.pause?.(); v.removeAttribute('src'); v.load();
+      }else{
+        v.addEventListener('loadeddata', ok, {once:true});
+        v.addEventListener('canplay', ok, {once:true});
+        setTimeout(()=>{ if(v.readyState>=2) ok(); }, 1800);
+      }
+    })();
+
+    // Моб. меню
+    (function(){
+      const btn = document.getElementById('menuBtn');
+      const drawer = document.getElementById('drawer');
+      if(!btn||!drawer) return;
+      const toggle = (open)=> {
+        if(open===undefined) open = !drawer.classList.contains('open');
+        drawer.classList.toggle('open', open);
+        drawer.hidden = !open;
+        btn.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('mobile-menu-open', open);
+      };
+      const on = (e)=>{ e.preventDefault(); toggle(); };
+      btn.addEventListener('click', on, {passive:false});
+      btn.addEventListener('touchstart', on, {passive:false});
+      const outside=(e)=>{
+        if(!drawer.classList.contains('open')) return;
+        if(!drawer.contains(e.target) && !btn.contains(e.target)) toggle(false);
+      };
+      document.addEventListener('click', outside);
+      document.addEventListener('touchstart', outside, {passive:true});
+    })();
+
+    // Плавные появления
+    (function(){
+      const els = document.querySelectorAll('.fadein');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('show');
+        });
+      },{threshold:.18});
+      els.forEach(el=>io.observe(el));
+    })();
+
+    // Параллакс
+    (function(){
+      if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const els=[...document.querySelectorAll('[data-parallax]')];
+      if(!els.length) return; let H=innerHeight, ticking=false;
+      const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
+      const apply=()=>{
+        els.forEach(el=>{
+          const s=parseFloat(el.dataset.speed||'0.15');
+          const r=el.getBoundingClientRect();
+          const c=r.top+r.height/2-H/2;
+          el.style.transform=`translate3d(0, ${clamp(c*s,-36,36)}px, 0)`;
+        }); ticking=false;
+      };
+      addEventListener('scroll', ()=>{ if(!ticking){ ticking=true; requestAnimationFrame(apply);} }, {passive:true});
+      addEventListener('resize', ()=>{H=innerHeight; apply();}, {passive:true});
+      apply();
+    })();
+  </script>
+</body>
+</html>
