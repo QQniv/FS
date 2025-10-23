@@ -1,56 +1,56 @@
-/* Прелоадер «капля → рябь → проявление контента»
-   Использование: <body class="preloading"> + <div id="preloader">...</div>
-   Скрипт автоматически запустит анимацию и удалит прелоадер.
+/* Делюкс-прелоадер: плавное падение капли + мягкие ряби + блики и «искры».
+   Подключение: <link rel="stylesheet" href="preloader.css"> и <body class="preloading"> + контейнер #preloader.
 */
 (function(){
   const root = document.getElementById('preloader');
   if(!root) return;
 
-  // Если пользователь не любит анимации — выходим
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.body.classList.remove('preloading');
-    root.remove();
-    return;
+    document.body.classList.remove('preloading'); root.remove(); return;
   }
 
-  const drop = root.querySelector('.drop');
-  const ripples = [...root.querySelectorAll('.ripple')];
+  const drop = root.querySelector('.drop-3d');
+  const gloss = root.querySelector('.gloss');
+  const sparkles = root.querySelector('.sparkles');
+  const rings = [...root.querySelectorAll('.ripples span')];
 
-  // 1) «Появление» капли
+  // 1) Плавный прилёт капли
   drop.animate([
     {opacity:0, transform:'translateY(-40vh) scale(1)'},
-    {opacity:1, transform:'translateY(-10vh) scale(1.02)'},
+    {opacity:1, transform:'translateY(-8vh) scale(1.03)'},
     {opacity:1, transform:'translateY(0) scale(1)'}
-  ], {duration:900, easing:'cubic-bezier(.16,1,.3,1)', fill:'forwards'});
+  ], {duration:1100, easing:'cubic-bezier(.16,1,.3,1)', fill:'forwards'});
 
-  // 2) Удар капли и рябь
-  const splash = ()=> {
-    ripples.forEach((el, i)=>{
-      el.animate([
-        {opacity:0, width:'10px', height:'10px'},
-        {opacity:1, offset:.15},
-        {opacity:0, width:'120vmin', height:'120vmin'}
-      ], {duration:1400 + i*250, delay: i*120, easing:'cubic-bezier(.22,.61,.36,1)', fill:'forwards'});
-    });
-  };
+  // 2) Блики «дышат»
+  gloss.animate([
+    {transform:'translateY(0)'},
+    {transform:'translateY(2px)'},
+    {transform:'translateY(0)'}
+  ], {duration:1800, iterations:Infinity, direction:'alternate', easing:'ease-in-out'});
 
-  // 3) Раскрытие страницы (blur → чётко)
-  const reveal = ()=>{
-    document.documentElement.style.setProperty('--reveal-blur','12px');
-    document.body.animate([
-      {filter:'blur(12px) opacity(0.0)'},
-      {filter:'blur(0px) opacity(1)'}
-    ], {duration:600, easing:'cubic-bezier(.16,1,.3,1)', fill:'forwards'});
-  };
+  // 3) Искры вспыхивают
+  sparkles.animate([
+    {opacity:.0}, {opacity:.85}, {opacity:.0}
+  ], {duration:1600, delay:400, easing:'ease-in-out', iterations:2, fill:'forwards'});
 
-  // Последовательность
-  setTimeout(splash, 820);
+  // 4) Ряби расходятся тремя волнами
+  const ripple = (el, delay)=> el.animate([
+    {opacity:0, width:'10px', height:'10px'},
+    {opacity:1, offset:.12},
+    {opacity:0, width:'120vmin', height:'120vmin'}
+  ], {duration:1800, delay, easing:'cubic-bezier(.22,.61,.36,1)', fill:'forwards'});
+
+  setTimeout(()=>{ rings.forEach((r,i)=>ripple(r, i*180)); }, 760);
+
+  // 5) Мягкое проявление страницы
+  document.body.animate([
+    {filter:'blur(12px) opacity(0)'},
+    {filter:'blur(0px) opacity(1)'}
+  ], {duration:700, delay:980, easing:'cubic-bezier(.16,1,.3,1)', fill:'forwards'});
+
+  // 6) Убираем прелоадер
   setTimeout(()=>{
-    reveal();
-    // убрать прелоадер и класс
-    setTimeout(()=>{
-      document.body.classList.remove('preloading');
-      root.remove();
-    }, 650);
-  }, 1100);
+    document.body.classList.remove('preloading');
+    root.remove();
+  }, 1800);
 })();
