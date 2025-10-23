@@ -4,32 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Почему вода вкусная — Fresh Systems</title>
-  <meta name="description" content="Инженерный подход к вкусу воды: баланс минерализации, удаление запахов и органики, pH и свежесть. Как мы добиваемся стабильного, приятного вкуса воды круглый год." />
+  <meta name="description" content="Инженерный подход к вкусу воды: баланс минерализации, удаление запахов и органики, pH и свежесть. Как мы добиваемся стабильного, приятного вкуса." />
   <meta name="color-scheme" content="dark" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap&subset=cyrillic" rel="stylesheet">
-  <!-- Базовые стили сайта -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- Локальные стили страницы «Почему вода вкусная» -->
+  <link rel="stylesheet" href="preloader.css" />
   <link rel="stylesheet" href="page-taste.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
 <body class="preloading">
 
-  <!-- Прелоадер: «капля → рябь → проявление» -->
+  <!-- Прелоадер -->
   <div id="preloader" aria-hidden="true">
-    <svg class="drop" viewBox="0 0 120 160" aria-hidden="true">
-      <defs>
-        <radialGradient id="g" cx="50%" cy="50%">
-          <stop offset="0%" stop-color="#7dd3fc"/>
-          <stop offset="100%" stop-color="#38bdf8"/>
-        </radialGradient>
-      </defs>
-      <path d="M60 8 C60 8, 16 58, 16 92 C16 115, 35 136, 60 136 C85 136, 104 115, 104 92 C104 58, 60 8, 60 8 Z"
-            fill="url(#g)"/>
-    </svg>
-    <div class="ripple ripple-1"></div>
-    <div class="ripple ripple-2"></div>
-    <div class="ripple ripple-3"></div>
+    <div class="loader-orb"></div>
+    <div class="ripples"><span></span><span></span></div>
   </div>
 
   <!-- Шапка -->
@@ -60,7 +48,7 @@
       <div class="hgroup fadein" data-parallax data-speed="0.18">
         <div class="kicker">Почему вода вкусная</div>
         <h1 class="h1">Сбалансированный вкус — это инженерия</h1>
-        <p class="sub">Мы контролируем минерализацию, удаляем запахи и органику, настраиваем pH и «свежесть». Результат — мягкий и чистый профиль, который хочется пить.</p>
+        <p class="sub">Мы контролируем минерализацию, удаляем запахи и органику, настраиваем pH и свежесть. Результат — мягкий и чистый профиль, который хочется пить.</p>
         <div class="actions">
           <a href="#profiles" class="btn primary">Выбрать профиль вкуса</a>
           <a href="technologies.html" class="btn ghost">Смотреть технологии</a>
@@ -69,13 +57,13 @@
     </div>
   </section>
 
-  <!-- Что формирует вкус -->
+  <!-- Четыре столпа вкуса -->
   <section class="section">
     <div class="container">
       <div class="hgroup fadein">
         <div class="kicker">ОСНОВЫ ВКУСА</div>
         <h2 class="h2">Четыре столпа вкуса воды</h2>
-        <p class="sub">На практике вкус — это тонкий баланс минералов, отсутствия посторонних запахов, корректного pH и температуры/«свежести» после фильтрации.</p>
+        <p class="sub">Вкус — тонкий баланс минералов, отсутствия посторонних запахов, корректного pH и свежести после фильтрации.</p>
       </div>
 
       <div class="row mt-3">
@@ -83,36 +71,28 @@
           <div class="taste-ill" style="--img:url('images/taste/mineral.jpg')"></div>
           <h3>Минерализация</h3>
           <p>Поддерживаем общий TDS и соотношение Ca/Mg/Na/K. Слишком мало — «плоско», слишком много — «тяжело».</p>
-          <div class="meter">
-            <div class="bar" style="--val:62%"><span>TDS</span></div>
-          </div>
+          <div class="meter"><div class="bar" style="--val:62%"><span>TDS</span></div></div>
         </div>
 
         <div class="taste-card fadein">
           <div class="taste-ill" style="--img:url('images/taste/odor.jpg')"></div>
           <h3>Органолептика</h3>
           <p>Убираем запахи/привкусы (хлор, органика), корректируем послевкусие сорбцией и пост-полировкой.</p>
-          <div class="meter">
-            <div class="bar ok" style="--val:90%"><span>Чистый профиль</span></div>
-          </div>
+          <div class="meter"><div class="bar ok" style="--val:90%"><span>Чистый профиль</span></div></div>
         </div>
 
         <div class="taste-card fadein">
           <div class="taste-ill" style="--img:url('images/taste/ph.jpg')"></div>
           <h3>pH и щёлочность</h3>
           <p>Лёгкая щёлочность смягчает вкус. Тончайшая реминерализация спасает от «кислого» профиля.</p>
-          <div class="meter">
-            <div class="bar" style="--val:55%"><span>pH-баланс</span></div>
-          </div>
+          <div class="meter"><div class="bar" style="--val:55%"><span>pH-баланс</span></div></div>
         </div>
 
         <div class="taste-card fadein">
           <div class="taste-ill" style="--img:url('images/taste/fresh.jpg')"></div>
           <h3>Свежесть</h3>
           <p>Гигиена тракта, отсутствие застоев, корректная температура и аэрация — без «стаивающего» привкуса.</p>
-          <div class="meter">
-            <div class="bar ok" style="--val:88%"><span>Свежесть</span></div>
-          </div>
+          <div class="meter"><div class="bar ok" style="--val:88%"><span>Свежесть</span></div></div>
         </div>
       </div>
     </div>
@@ -124,7 +104,7 @@
       <div class="hgroup fadein">
         <div class="kicker">ПРОФИЛИ</div>
         <h2 class="h2">Подбираем вкус под задачу</h2>
-        <p class="sub">Выберите ориентир — мы настроим реминерализацию и пост-фильтры под ваш вкус и назначение воды.</p>
+        <p class="sub">Выберите ориентир — настроим реминерализацию и пост-фильтры под ваш вкус и назначение воды.</p>
       </div>
 
       <div class="row mt-3">
@@ -154,18 +134,18 @@
     </div>
   </section>
 
-  <!-- Как достигаем вкуса → переход на Технологии -->
+  <!-- Как достигаем вкуса -->
   <section class="section">
     <div class="container">
       <div class="hgroup fadein">
         <div class="kicker">КАК МЫ ЭТО ДЕЛАЕМ</div>
         <h2 class="h2">От анализа — к технологии и настройке вкуса</h2>
-        <p class="sub">Сначала убираем всё лишнее (NF/RO, сорбция, УФ), затем точно дозируем минералы и тонко полируем вкус.</p>
+        <p class="sub">Сначала убираем всё лишнее (NF/RO, сорбция, УФ), затем дозируем минералы и тонко полируем вкус.</p>
       </div>
 
       <ol class="steps fadein">
-        <li><span>1</span> Анализ воды и постановка вкусового ТЗ</li>
-        <li><span>2</span> Подбор схемы: NF/RO + сорбция + УФ</li>
+        <li><span>1</span> Анализ воды и вкусовое ТЗ</li>
+        <li><span>2</span> Схема: NF/RO + сорбция + УФ</li>
         <li><span>3</span> Реминерализация, pH, полировка</li>
         <li><span>4</span> ПНР, протоколы и дегустация</li>
         <li><span>5</span> Мониторинг и стабилизация вкуса</li>
@@ -173,30 +153,29 @@
 
       <div class="actions fadein">
         <a class="btn primary" href="technologies.html">Смотреть технологии</a>
-        <a class="btn ghost" href="sanpin.html">СанПиН и протоколы</a>
+        <a class="btn ghost" href="sanpin.html">СанПиН</a>
       </div>
     </div>
   </section>
 
-  <!-- Кейсы (мини-галерея) -->
+  <!-- Кейс-галерея -->
   <section class="section">
     <div class="container">
       <div class="hgroup fadein">
         <div class="kicker">КЕЙСЫ</div>
         <h2 class="h2">Реальные объекты, реальный вкус</h2>
-        <p class="sub">Здесь — примеры вкус-профилей и исходников. Под каждый дом/квартиру мы даём протоколы и чек-лист.</p>
       </div>
 
       <div class="cases row mt-3">
-        <a class="case fadein" href="images/cases/case-01.jpg" target="_blank">
+        <a class="case fadein" href="images/cases/case-01.jpg" target="_blank" rel="noopener">
           <div class="ph" style="--img:url('images/cases/case-01.jpg')"></div>
           <div class="cap"><strong>ЖК «Символ»</strong> · «альпийский» профиль, TDS ~110</div>
         </a>
-        <a class="case fadein" href="images/cases/case-02.jpg" target="_blank">
+        <a class="case fadein" href="images/cases/case-02.jpg" target="_blank" rel="noopener">
           <div class="ph" style="--img:url('images/cases/case-02.jpg')"></div>
           <div class="cap"><strong>Коттедж 420 м²</strong> · нейтральный профиль, кофе</div>
         </a>
-        <a class="case fadein" href="images/cases/case-03.jpg" target="_blank">
+        <a class="case fadein" href="images/cases/case-03.jpg" target="_blank" rel="noopener">
           <div class="ph" style="--img:url('images/cases/case-03.jpg')"></div>
           <div class="cap"><strong>Квартира</strong> · детский профиль</div>
         </a>
@@ -204,32 +183,7 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container">
-      <div class="hgroup fadein">
-        <div class="kicker">FAQ</div>
-        <h2 class="h2">Частые вопросы о вкусе воды</h2>
-      </div>
-
-      <div class="faq fadein" role="tablist">
-        <details>
-          <summary>Осмос «убивает вкус» — так ли это?</summary>
-          <p>Нет, вкус «теряется» только без реминерализации. Мы возвращаем нужные соли в нужной дозе и получаем мягкий, «живой» профиль.</p>
-        </details>
-        <details>
-          <summary>Можно ли сделать вкус «как любимая бутилированная»?</summary>
-          <p>Да, подберём параметры близкие к референсу по TDS, щёлочности и катионному составу. Сделаем тест на пробнике.</p>
-        </details>
-        <details>
-          <summary>Вкус будет стабилен круглый год?</summary>
-          <p>Да. Ставим мониторинг потока/давления/ресурса, регламент сервиса и контрольные пробы — вкусовой профиль не «плавает».</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Финальный CTA: к СанПиН и Контактам -->
+  <!-- Финальный CTA -->
   <section class="section cta">
     <div class="container">
       <div class="hgroup fadein">
@@ -254,7 +208,7 @@
     </div>
   </footer>
 
-  <!-- Базовый JS (моб. меню, анимации из главной) -->
+  <!-- JS -->
   <script>
     // Моб. меню
     (function(){
@@ -279,9 +233,7 @@
     (function(){
       const els = document.querySelectorAll('.fadein');
       const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting) e.target.classList.add('show');
-        });
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
       },{threshold:.18});
       els.forEach(el=>io.observe(el));
     })();
@@ -306,7 +258,7 @@
     })();
   </script>
 
-  <!-- Прелоадер (капля/рябь) -->
+  <!-- Прелоадер -->
   <script src="preloader.js"></script>
 </body>
 </html>
