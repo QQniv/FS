@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fresh Systems — Централизованные системы питьевой воды</title>
-  <meta name="description" content="Проектирование, монтаж и сервис централизованных систем питьевой воды для ЖК, коттеджей и квартир. Протоколы по СанПиН. Вкусный профиль воды." />
+  <meta name="description" content="Проектирование, монтаж и сервис централизованных систем питьевой воды для ЖК, коттеджей и квартир. Протоколы и соответствие СанПиН. Вкусная вода ежедневно." />
   <meta name="color-scheme" content="dark" />
   <link rel="preload" as="image" href="images/hero-water.jpg" />
   <link rel="preload" as="video" href="images/water-bg.mp4" type="video/mp4" />
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="preloader.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:title" content="Fresh Systems — Питьевая вода для вашего дома" />
-  <meta property="og:description" content="Инженерия полного цикла: от анализа воды до сервиса. ЖК, частные дома, квартиры." />
+  <meta property="og:description" content="Инженерия полного цикла: от анализа до сервиса. ЖК, частные дома, квартиры." />
   <meta property="og:image" content="images/og-cover.jpg" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Fresh Systems","url":"https://your-domain.example","logo":"https://your-domain.example/images/logo.svg","sameAs":[]}
@@ -27,15 +27,27 @@
     <div class="ripples"><span></span><span></span></div>
   </div>
 
-  <!-- Фон -->
-  <video id="bgVideo" class="bg-video" autoplay muted loop playsinline preload="auto" poster="images/hero-water.jpg">
+  <!-- Фон видео -->
+  <video id="bgVideo" class="bg-video" autoplay muted loop playsinline preload="metadata" poster="images/hero-water.jpg">
     <source src="images/water-bg.mp4" type="video/mp4" />
   </video>
-  <div class="overlay"></div>
+  <div class="overlay" aria-hidden="true"></div>
 
   <!-- Шапка -->
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="На главную">FS</a>
+    <a class="brand" href="index.html" aria-label="На главную">
+      <!-- Минималистичный SVG-логотип FS -->
+      <svg viewBox="0 0 64 64" role="img" aria-label="FS logo">
+        <defs>
+          <linearGradient id="lg" x1="0" x2="1">
+            <stop offset="0" stop-color="#7dd3fc"/><stop offset="1" stop-color="#38bdf8"/>
+          </linearGradient>
+        </defs>
+        <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#lg)"/>
+        <path d="M20 22h18v6H26v6h10v6H20V22zm20 0h14v6H46c-2 0-2 2-2 3h10v6H40v-6c0-5 3-9 8-9z" fill="#001019"/>
+      </svg>
+      <b>Fresh&nbsp;Systems</b>
+    </a>
     <nav class="top-nav" aria-label="Основное меню">
       <a href="technologies.html">Технологии</a>
       <a href="sanpin.html">СанПиН</a>
@@ -61,13 +73,13 @@
       <div class="hgroup fadein" data-parallax data-speed="0.18">
         <div class="kicker">Fresh Systems</div>
         <h1 class="h1">Премиальная питьевая вода <br class="mob-br">в&nbsp;вашем доме</h1>
-        <p class="sub">Проектируем систему по анализу воды, ставим инженерное оборудование, подтверждаем качество протоколами. Каждый день — чистая, безопасная и вкусная вода.</p>
+        <p class="sub">Проектируем по анализу воды, ставим инженерное оборудование, подтверждаем качество протоколами. Каждый день — чистая, безопасная и вкусная вода.</p>
         <div class="actions">
           <a href="services.html" class="btn primary">Подобрать решение</a>
           <a href="contacts.html" class="btn ghost">Получить расчёт</a>
         </div>
 
-        <div class="stats">
+        <div class="stats" aria-label="Показатели">
           <div class="stat"><span class="num">99.9%</span><span class="cap">удаление примесей NF/RO</span></div>
           <div class="stat"><span class="num">24/7</span><span class="cap">мониторинг и сервис</span></div>
           <div class="stat"><span class="num">СанПиН</span><span class="cap">подтверждение протоколами</span></div>
@@ -82,7 +94,7 @@
       <div class="hgroup fadein">
         <div class="kicker">РЕШЕНИЯ</div>
         <h2 class="h2">Под задачи дома, посёлка или квартиры</h2>
-        <p class="sub">Проектируем по результатам анализа воды и требованиям объекта. Чистая вода — без компромиссов.</p>
+        <p class="sub">Проектируем по анализу воды и требованиям объекта. Чистая вода — без компромиссов.</p>
       </div>
 
       <div class="row mt-3">
@@ -90,7 +102,7 @@
           <div class="card-ill" style="--img:url('images/solutions/multi.jpg')"></div>
           <div class="card-body">
             <h3>Многоквартирные дома</h3>
-            <p>Центральные станции, буферные ёмкости, подача на стояки, резервирование контуров.</p>
+            <p>Станции на вводе, буферы, подача на стояки, резервирование.</p>
             <span class="arrow">Подробнее</span>
           </div>
         </a>
@@ -99,7 +111,7 @@
           <div class="card-ill" style="--img:url('images/solutions/private.jpg')"></div>
           <div class="card-body">
             <h3>Частные дома</h3>
-            <p>Компактные станции с реминерализацией и УФ-обеззараживанием.</p>
+            <p>Компактные станции: мягкая минерализация, УФ, чистый вкус.</p>
             <span class="arrow">Подробнее</span>
           </div>
         </a>
@@ -108,7 +120,7 @@
           <div class="card-ill" style="--img:url('images/solutions/apartment.jpg')"></div>
           <div class="card-body">
             <h3>Квартиры</h3>
-            <p>Модули под мойку, питьевые фонтанчики, пост-карбонизация по вкусу.</p>
+            <p>Модули под мойку, питьевые точки, профили «детский/кофе».</p>
             <span class="arrow">Подробнее</span>
           </div>
         </a>
@@ -122,20 +134,20 @@
       <div class="hgroup fadein">
         <div class="kicker">ПОЧЕМУ ВОДА ВКУСНАЯ</div>
         <h2 class="h2">Сбалансированная минерализация и свежесть</h2>
-        <p class="sub">Контролируем минералы, удаляем запахи и органику, корректируем вкус пост-фильтрами. Результат — мягкий, «чистый» профиль без посторонних нот.</p>
+        <p class="sub">Контролируем минералы, убираем запахи и органику, корректируем вкус пост-фильтрами. Результат — мягкий профиль без посторонних нот.</p>
       </div>
 
       <div class="row">
         <div class="col-6 fadein">
           <div class="glass">
             <h3>Инженерная карта вкуса</h3>
-            <p>Подбираем солевой состав под задачу: от нейтрального до «альпийского» профиля.</p>
+            <p>Подбираем солевой состав: от нейтрального до «альпийского».</p>
           </div>
         </div>
         <div class="col-6 fadein">
           <div class="glass">
-            <h3>Стабильность круглый год</h3>
-            <p>Автоконтроль потока, давления и ресурса — вкус без «скачков» по сезонам.</p>
+            <h3>Стабильность 365 дней</h3>
+            <p>Онлайн-контроль потока, давления и ресурса — вкус без «скачков».</p>
           </div>
         </div>
       </div>
@@ -147,7 +159,7 @@
     </div>
   </section>
 
-  <!-- Доверие -->
+  <!-- Блок доверия -->
   <section class="section">
     <div class="container">
       <div class="hgroup fadein">
@@ -155,14 +167,13 @@
         <h2 class="h2">Качество подтверждаем документами</h2>
         <p class="sub">Каждый запуск — с протоколом лаборатории и чек-листом по СанПиН. По запросу — сравнение с бутилированной.</p>
       </div>
-      <div class="logos fadein" aria-label="Бренды оборудования">
+      <div class="logos fadein" aria-label="Партнёры">
         <span class="logo">Pentair</span>
         <span class="logo">Grundfos</span>
         <span class="logo">Danfoss</span>
         <span class="logo">Dow</span>
         <span class="logo">Ebara</span>
       </div>
-
       <div class="actions fadein">
         <a href="sanpin.html" class="btn ghost">СанПиН и протоколы</a>
       </div>
@@ -175,25 +186,25 @@
       <div class="hgroup fadein">
         <div class="kicker">КЕЙСЫ</div>
         <h2 class="h2">Реальные объекты, реальный вкус</h2>
-        <p class="sub">Профиль вкуса, исходники и фото узла. По каждому кейсу — протоколы и чек-лист ПНР.</p>
+        <p class="sub">Профили вкуса, исходники и фото узлов. По каждому кейсу — протоколы и ПНР чек-лист.</p>
       </div>
 
       <div class="cases row mt-3">
-        <a class="case fadein" href="images/cases/home-01.jpg" target="_blank" rel="noopener">
+        <a class="case fadein" href="images/cases/home-01.jpg" target="_blank">
           <div class="ph" style="--img:url('images/cases/home-01.jpg')"></div>
           <div class="cap">
             <strong>ЖК «Символ»</strong> · «альпийский» профиль, TDS ~110, pH 7.5
             <div class="mini-tags"><span>TDS</span><span>pH</span><span>Протокол</span></div>
           </div>
         </a>
-        <a class="case fadein" href="images/cases/home-02.jpg" target="_blank" rel="noopener">
+        <a class="case fadein" href="images/cases/home-02.jpg" target="_blank">
           <div class="ph" style="--img:url('images/cases/home-02.jpg')"></div>
           <div class="cap">
-            <strong>Коттедж 420 м²</strong> · нейтральный профиль, стабильная экстракция
+            <strong>Коттедж 420 м²</strong> · нейтральный профиль, кофе/бариста
             <div class="mini-tags"><span>Кофе</span><span>Щёлочность</span><span>ΔP</span></div>
           </div>
         </a>
-        <a class="case fadein" href="images/cases/home-03.jpg" target="_blank" rel="noopener">
+        <a class="case fadein" href="images/cases/home-03.jpg" target="_blank">
           <div class="ph" style="--img:url('images/cases/home-03.jpg')"></div>
           <div class="cap">
             <strong>Квартира</strong> · детский профиль, строгие СанПиН
@@ -232,7 +243,7 @@
       <div class="hgroup fadein">
         <div class="kicker">СВЯЖИТЕСЬ С НАМИ</div>
         <h2 class="h2">Обсудим ваш объект за 20 минут</h2>
-        <p class="sub">Расскажите про дом и пожелания по вкусу воды — подготовим концепцию и ориентировочный бюджет.</p>
+        <p class="sub">Расскажите про дом и пожелания по вкусу воды — подготовим концепцию и бюджет.</p>
         <div class="actions">
           <a href="contacts.html" class="btn primary">Оставить заявку</a>
           <a href="services.html" class="btn ghost">Услуги и цены</a>
@@ -240,6 +251,13 @@
       </div>
     </div>
   </section>
+
+  <!-- Липкий CTA (мобилка) -->
+  <div class="sticky-cta" aria-hidden="false">
+    <div class="inner">
+      <a class="btn primary" href="contacts.html">Оставить заявку</a>
+    </div>
+  </div>
 
   <!-- Футер -->
   <footer class="site-footer">
@@ -252,74 +270,44 @@
 
   <!-- JS -->
   <script>
-    // Видео (мобилка → статичный фон)
+    // Видео (десктоп: видео; мобилка: статичный фон)
     (function(){
       const isMobile = matchMedia('(max-width: 768px)').matches;
       const v = document.getElementById('bgVideo');
       if(!v) return;
       const ok = ()=>{ document.body.classList.remove('no-video'); v.play?.().catch(()=>{}); };
-      if(isMobile){
-        document.body.classList.add('mobile-bg');
-        v.pause?.(); v.removeAttribute('src'); v.load();
-      }else{
-        v.addEventListener('loadeddata', ok, {once:true});
-        v.addEventListener('canplay', ok, {once:true});
-        setTimeout(()=>{ if(v.readyState>=2) ok(); }, 1800);
-      }
+      if(isMobile){ v.pause?.(); v.removeAttribute('src'); v.load(); }
+      else{ v.addEventListener('canplay', ok, {once:true}); setTimeout(()=>{if(v.readyState>=2) ok();}, 1400); }
     })();
 
     // Моб. меню
     (function(){
-      const btn = document.getElementById('menuBtn');
-      const drawer = document.getElementById('drawer');
+      const btn=document.getElementById('menuBtn'), drawer=document.getElementById('drawer');
       if(!btn||!drawer) return;
-      const toggle = (open)=> {
-        if(open===undefined) open = !drawer.classList.contains('open');
-        drawer.classList.toggle('open', open);
-        drawer.hidden = !open;
-        btn.setAttribute('aria-expanded', String(open));
-        document.body.classList.toggle('mobile-menu-open', open);
-      };
-      const on = (e)=>{ e.preventDefault(); toggle(); };
-      btn.addEventListener('click', on, {passive:false});
-      btn.addEventListener('touchstart', on, {passive:false});
-      const outside=(e)=>{
-        if(!drawer.classList.contains('open')) return;
-        if(!drawer.contains(e.target) && !btn.contains(e.target)) toggle(false);
-      };
-      document.addEventListener('click', outside);
-      document.addEventListener('touchstart', outside, {passive:true});
+      const toggle=(open)=>{ if(open===undefined) open=!drawer.classList.contains('open'); drawer.classList.toggle('open',open); drawer.hidden=!open; btn.setAttribute('aria-expanded',String(open)); document.body.classList.toggle('mobile-menu-open',open); };
+      btn.addEventListener('click',(e)=>{e.preventDefault();toggle();});
+      document.addEventListener('click',(e)=>{ if(!drawer.classList.contains('open')) return; if(!drawer.contains(e.target)&&!btn.contains(e.target)) toggle(false); });
     })();
 
     // Плавные появления
     (function(){
-      const els = document.querySelectorAll('.fadein');
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting) e.target.classList.add('show');
-        });
-      },{threshold:.18});
+      const els=document.querySelectorAll('.fadein');
+      const io=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }); },{threshold:.18});
       els.forEach(el=>io.observe(el));
     })();
 
-    // Параллакс
+    // Параллакс (очень лёгкий)
     (function(){
       if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const els=[...document.querySelectorAll('[data-parallax]')];
-      if(!els.length) return; let H=innerHeight, ticking=false;
+      const els=[...document.querySelectorAll('[data-parallax]')]; if(!els.length) return; let H=innerHeight, ticking=false;
       const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
-      const apply=()=>{
-        els.forEach(el=>{
-          const s=parseFloat(el.dataset.speed||'0.15');
-          const r=el.getBoundingClientRect();
-          const c=r.top+r.height/2-H/2;
-          el.style.transform=`translate3d(0, ${clamp(c*s,-36,36)}px, 0)`;
-        }); ticking=false;
-      };
+      const apply=()=>{ els.forEach(el=>{ const s=parseFloat(el.dataset.speed||'0.15'); const r=el.getBoundingClientRect(); const c=r.top+r.height/2-H/2; el.style.transform=`translate3d(0, ${clamp(c*s,-36,36)}px, 0)`; }); ticking=false; };
       addEventListener('scroll', ()=>{ if(!ticking){ ticking=true; requestAnimationFrame(apply);} }, {passive:true});
       addEventListener('resize', ()=>{H=innerHeight; apply();}, {passive:true});
       apply();
     })();
+
+    // Lazy для <img> в карточках (через background) — нет необходимости, но если появятся <img>, ставь loading="lazy".
   </script>
 
   <!-- Прелоадер -->
