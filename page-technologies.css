@@ -1,0 +1,101 @@
+/* Локальные стили страницы «Технологии» */
+
+/* HERO */
+.hero-tech{
+  min-height: 60vh;
+  background:
+    radial-gradient(900px 600px at 10% 10%, rgba(56,189,248,.10), transparent 60%),
+    radial-gradient(1000px 640px at 90% 0%, rgba(125,211,252,.08), transparent 70%);
+}
+
+/* Схема */
+.tech-flow{
+  margin-top: 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.flow-svg{ width: 100%; height: auto; display: block }
+.flow-svg .cap{
+  fill:#cfeafb; font-size:12px;
+}
+.legend{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; color:#cfeafb
+}
+.legend .dot{
+  display:inline-block; width:10px; height:10px; border-radius:999px;
+  background: linear-gradient(90deg,#7dd3fc,#38bdf8); margin-right:8px;
+}
+
+/* Модули */
+.mod-card{
+  grid-column: span 4;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  overflow: hidden; box-shadow: var(--shadow);
+  transition: transform .3s cubic-bezier(.16,1,.3,1), border-color .25s, background .25s;
+}
+.mod-card:hover{ transform: translateY(-4px); border-color: rgba(56,189,248,.35); background: rgba(255,255,255,.06); }
+.mod-ill{ height: 160px; background: linear-gradient(0deg, rgba(7,11,22,.35), rgba(7,11,22,.35)), var(--img) center/cover no-repeat; }
+.mod-card h3{ font-size:20px; margin: 12px 14px 6px; }
+.mod-card p{ color:#dbe9f6; margin: 0 14px 12px; }
+.mod-card .points{ padding: 0 14px 14px; list-style: none; color:#cfeafb }
+.mod-card .points li{ margin: 6px 0; position: relative; padding-left: 18px; }
+.mod-card .points li::before{
+  content:""; position:absolute; left:0; top:9px; width:10px; height:10px; border-radius:999px;
+  background: linear-gradient(90deg,#7dd3fc,#38bdf8);
+}
+
+/* Мониторинг */
+.list{ list-style: none; padding-left: 0; color:#cfeafb }
+.list li{ margin: 8px 0; position: relative; padding-left: 16px}
+.list li::before{
+  content:"•"; position: absolute; left: 0; color:#7dd3fc
+}
+
+/* NF vs RO */
+.nfro.grid{
+  display:grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 16px
+}
+.nfro .nf, .nfro .ro{
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 16px; box-shadow: var(--shadow);
+}
+.nfro h3{ font-size: 18px; margin-bottom: 6px }
+.nfro ul{ color:#cfeafb; padding-left: 18px }
+
+/* Прелоадер */
+#preloader{
+  position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center;
+  background: radial-gradient(1200px 800px at 50% -10%, rgba(56,189,248,.08), transparent 60%), #0b1020;
+}
+#preloader .drop{ width: 76px; height: 96px; opacity: 0; transform: translateY(-40vh); filter: drop-shadow(0 14px 40px rgba(56,189,248,.35)); }
+#preloader .ripple{
+  position:absolute; width: 8px; height: 8px; border-radius: 999px; left: 50%; top: 50%;
+  transform: translate(-50%, -50%); opacity: 0; border: 2px solid rgba(125,211,252,.55);
+  box-shadow: 0 0 0 2px rgba(56,189,248,.25), inset 0 0 40px rgba(56,189,248,.25);
+}
+#preloader .ripple-2{ border-color: rgba(125,211,252,.35); }
+#preloader .ripple-3{ border-color: rgba(125,211,252,.22); }
+
+/* A11y */
+@media (prefers-reduced-motion: reduce){
+  #preloader{ display:none !important; }
+}
+
+/* Адаптив */
+@media (max-width:1024px){
+  .legend{ grid-template-columns:repeat(2,1fr) }
+  .mod-card{ grid-column: span 6 }
+  .nfro.grid{ grid-template-columns: 1fr }
+}
+@media (max-width:768px){
+  .legend{ grid-template-columns:1fr }
+  .mod-card{ grid-column: span 6 }
+  .nfro.grid{ grid-template-columns: 1fr }
+}
