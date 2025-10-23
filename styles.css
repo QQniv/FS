@@ -19,7 +19,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ===== Фон ===== */
+/* ===== Фон (главная) ===== */
 .bg-video{
   position:fixed; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:-3;
   filter:brightness(.55) contrast(1.06) saturate(1.08);
@@ -43,7 +43,9 @@ body{
   background:rgba(11,16,32,.55); backdrop-filter:blur(8px);
   border-bottom:1px solid rgba(56,189,248,.14);
 }
-.brand{font-weight:900;font-size:20px;letter-spacing:.06em}
+.brand{display:flex; align-items:center; gap:10px}
+.brand svg{width:26px; height:26px}
+.brand b{font-weight:900;font-size:18px;letter-spacing:.06em}
 .top-nav{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .top-nav a{padding:7px 9px;border-radius:10px}
 .top-nav a:hover{background:rgba(56,189,248,.10)}
@@ -69,7 +71,7 @@ body{
 .section:first-of-type{border-top:none}
 .hgroup{max-width:980px}
 
-/* Заголовки: убрали «бегающий белый блок». Теперь — спокойный градиент + плавная underline. */
+/* Заголовки (liquid underline, без “бегунка”) */
 .h1{
   font-size:clamp(30px,5.2vw,60px); font-weight:900; line-height:1.08; margin-bottom:14px; position:relative; text-wrap:balance;
   background:linear-gradient(90deg,#fff 0%, #dff7ff 40%, #fff 80%); -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -78,7 +80,6 @@ body{
   font-size:clamp(22px,3.6vw,40px); font-weight:900; line-height:1.12; margin-bottom:10px; position:relative; text-wrap:balance;
   background:linear-gradient(90deg,#fff 0%, #e8fbff 40%, #fff 80%); -webkit-background-clip:text; background-clip:text; color:transparent;
 }
-/* новая «liquid-underline» появляется при появлении блока на экране */
 .h1::after, .h2::after{
   content:""; position:absolute; left:0; right:0; bottom:-8px; height:2px; border-radius:2px;
   background:linear-gradient(90deg, #7dd3fc, #38bdf8);
@@ -110,17 +111,18 @@ body{
 .hero{min-height:68vh;display:flex;align-items:center}
 .mob-br{display:none}
 
-/* Карточки */
-.card-cta{
-  grid-column:span 4; display:flex; flex-direction:column; border-radius:18px; overflow:hidden;
-  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow);
+/* Карточки (решения/кейсы/услуги унифицированы локальными файлами) */
+.card-cta, .cases .case, .svc-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px; overflow:hidden; box-shadow:var(--shadow);
   transition:transform .30s cubic-bezier(.16,1,.3,1), border-color .25s, background .25s;
 }
-.card-cta:hover{transform:translateY(-3px); border-color:rgba(56,189,248,.35); background:rgba(255,255,255,.06)}
-.card-ill{height:170px; background:linear-gradient(0deg, rgba(7,11,22,.3), rgba(7,11,22,.3)), var(--img) center/cover no-repeat}
-.card-body{padding:14px}
-.card-body h3{font-size:18px; margin-bottom:6px}
-.card-body p{color:#dbe9f6}
+.card-cta:hover, .cases .case:hover, .svc-card:hover{ transform:translateY(-3px); border-color:rgba(56,189,248,.35); background:rgba(255,255,255,.06) }
+.card-ill, .cases .case .ph, .svc-ill{height:170px; background:linear-gradient(0deg, rgba(7,11,22,.3), rgba(7,11,22,.3)), var(--img) center/cover no-repeat}
+.card-body, .cases .case .cap, .svc-body{padding:14px}
+.card-body h3, .svc-body h3{font-size:18px; margin-bottom:6px}
+.card-body p, .svc-body p{color:#dbe9f6}
 .arrow{display:inline-flex; align-items:center; gap:8px; margin-top:8px; color:#bfefff}
 .arrow::after{content:"→"; transition:transform .25s}
 .card-cta:hover .arrow::after{transform:translateX(4px)}
@@ -144,17 +146,9 @@ body{
 .cta .hgroup{max-width:800px}
 
 /* ===== КЕЙСЫ ===== */
-.cases .case{
-  grid-column: span 4;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 18px; overflow: hidden; transition: transform .28s, border-color .25s, background .25s; box-shadow: var(--shadow);
-}
-.cases .case .ph{ height: 170px; background: var(--img) center/cover no-repeat }
-.cases .case .cap{ padding: 12px 14px; color:#dbe9f6 }
+.cases .case{ grid-column: span 4 }
 .cases .case .mini-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px }
 .cases .case .mini-tags span{ padding:6px 10px; border-radius:999px; font-size:12px; border:1px solid rgba(56,189,248,.28); background:rgba(56,189,248,.08); color:#bfefff }
-.cases .case:hover{ transform: translateY(-2px); border-color: rgba(56,189,248,.35); background: rgba(255,255,255,.06) }
 
 /* Плавные появления */
 .fadein{opacity:0;transform:translateY(var(--reveal-distance));transition:opacity var(--reveal-duration) cubic-bezier(.16,1,.3,1),transform var(--reveal-duration) cubic-bezier(.16,1,.3,1)}
@@ -164,6 +158,16 @@ body{
 .site-footer{padding:20px 0; border-top:1px solid rgba(255,255,255,.08); margin-top:22px}
 .footer-inner{display:flex; align-items:center; gap:12px; justify-content:space-between; max-width:1160px; margin:0 auto; padding:0 20px}
 .minor{color:#9fb9c9; font-size:13px}
+
+/* ===== Sticky CTA (мобилка) ===== */
+.sticky-cta{
+  position:fixed; left:0; right:0; bottom:12px; z-index:19; display:none; justify-content:center; pointer-events:none;
+}
+.sticky-cta .inner{
+  pointer-events:auto; display:flex; gap:10px; padding:8px; border-radius:14px;
+  background:rgba(11,16,32,.86); border:1px solid rgba(255,255,255,.12); backdrop-filter:blur(10px);
+}
+@media (max-width:768px){ .sticky-cta{display:flex} }
 
 /* ===== Mobile-first оптимизации ===== */
 @media (max-width:1180px){
@@ -180,12 +184,9 @@ body{
   .top-nav{display:none}
   .menu-toggle{display:flex}
   body.mobile-menu-open{overflow:hidden}
-
-  /* меньше размытия и теней на мобилке (экономим GPU) */
   .overlay{background: linear-gradient(180deg, rgba(7,11,22,.72) 0%, rgba(7,11,22,.64) 100%)}
   .glass{backdrop-filter:none; box-shadow:0 8px 20px rgba(0,0,0,.18)}
-  .bg-video{display:none} /* мобильный фон статичный из body.mobile-bg */
-
+  .bg-video{display:none}
   .hero{min-height:58vh}
   .mob-br{display:inline}
   :root{--reveal-distance:28px;--reveal-duration:950ms}
@@ -196,7 +197,7 @@ body{
   .h2{font-size:clamp(20px,6.4vw,28px)}
   .sub{font-size:15px}
   .stats{gap:10px}
-  .card-ill,.cases .case .ph{height:150px}
+  .card-ill,.cases .case .ph,.svc-ill{height:150px}
   .btn{padding:10px 14px;border-radius:10px}
 }
 
