@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>СанПиН и протоколы — Fresh Systems</title>
+  <meta name="description" content="Как мы подтверждаем качество воды: лабораторные протоколы, контрольные точки, чек-листы запуска, сравнение с бутилированной водой. Соответствие санитарным требованиям." />
+  <meta name="color-scheme" content="dark" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="page-sanpin.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body class="preloading">
+
+  <!-- Прелоадер «капля → рябь → проявление» -->
+  <div id="preloader" aria-hidden="true">
+    <svg class="drop" viewBox="0 0 120 160" aria-hidden="true">
+      <defs>
+        <radialGradient id="g" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#7dd3fc"/>
+          <stop offset="100%" stop-color="#38bdf8"/>
+        </radialGradient>
+      </defs>
+      <path d="M60 8 C60 8, 16 58, 16 92 C16 115, 35 136, 60 136 C85 136, 104 115, 104 92 C104 58, 60 8, 60 8 Z"
+            fill="url(#g)"/>
+    </svg>
+    <div class="ripple ripple-1"></div>
+    <div class="ripple ripple-2"></div>
+    <div class="ripple ripple-3"></div>
+  </div>
+
+  <!-- Шапка -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="На главную">FS</a>
+    <nav class="top-nav" aria-label="Основное меню">
+      <a href="technologies.html">Технологии</a>
+      <a href="taste.html">Почему вода вкусная</a>
+      <a class="active" href="sanpin.html">СанПиН</a>
+      <a href="services.html">Услуги</a>
+      <a href="contacts.html" class="pill">Оставить заявку</a>
+    </nav>
+    <button class="menu-toggle" id="menuBtn" aria-label="Меню" aria-expanded="false"><span></span></button>
+  </header>
+
+  <!-- Моб. меню -->
+  <nav class="mobile-drawer" id="drawer" hidden aria-label="Мобильное меню">
+    <a href="technologies.html">Технологии</a>
+    <a href="taste.html">Почему вода вкусная</a>
+    <a class="active" href="sanpin.html">СанПиН</a>
+    <a href="services.html">Услуги</a>
+    <a href="contacts.html" class="btn primary w-full mt-2">Оставить заявку</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section hero hero-sanpin">
+    <div class="container">
+      <div class="hgroup fadein" data-parallax data-speed="0.18">
+        <div class="kicker">СанПиН и протоколы</div>
+        <h1 class="h1">Качество подтверждаем документами</h1>
+        <p class="sub">Каждый запуск сопровождаем протоколами аккредитованной лаборатории и чек-листами ПНР. Контрольные точки — от ввода до крана.</p>
+        <div class="actions">
+          <a href="#checks" class="btn primary">Что проверяем</a>
+          <a href="#docs" class="btn ghost">Примеры протоколов</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Что проверяем -->
+  <section id="checks" class="section">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">КОНТРОЛЬ</div>
+        <h2 class="h2">Что и где мы проверяем</h2>
+        <p class="sub">Выстраиваем карту контроля по узлам: исходная вода, после мембран, после реминерализации, в распределении и на точке водоразбора.</p>
+      </div>
+
+      <div class="row mt-3">
+        <div class="check-card fadein">
+          <h3>Физико-химия</h3>
+          <ul class="list">
+            <li>Показатели мутности и цветности</li>
+            <li>Проводимость / ориентир TDS</li>
+            <li>Жёсткость, щёлочность, pH</li>
+            <li>Остаточный хлор</li>
+          </ul>
+        </div>
+        <div class="check-card fadein">
+          <h3>Органолептика</h3>
+          <ul class="list">
+            <li>Запах и привкус (баллы)</li>
+            <li>Отсутствие посторонних нот</li>
+            <li>Температура / «свежесть»</li>
+          </ul>
+        </div>
+        <div class="check-card fadein">
+          <h3>Микробиология</h3>
+          <ul class="list">
+            <li>Общие колиформы / КМАФАнМ</li>
+            <li>Эшерихия coli</li>
+            <li>Патогенная флора (по ТЗ)</li>
+          </ul>
+        </div>
+        <div class="check-card fadein">
+          <h3>Металлы и примеси</h3>
+          <ul class="list">
+            <li>Fe, Mn (раств./общ.)</li>
+            <li>NH₄⁺, NO₂⁻/NO₃⁻</li>
+            <li>Сульфаты/хлориды</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass note fadein">
+        <strong>Важно:</strong> финальный перечень показателей и порогов согласуем с заказчиком под конкретный объект и применимые нормативы. Пробы берём на старте и по регламенту.
+      </div>
+    </div>
+  </section>
+
+  <!-- Примеры протоколов -->
+  <section id="docs" class="section">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">ДОКУМЕНТЫ</div>
+        <h2 class="h2">Примеры протоколов и чек-листов</h2>
+        <p class="sub">Макеты для демонстрации. В реальном проекте подшиваем оригиналы с печатями и цифровые копии в личном кабинете.</p>
+      </div>
+
+      <div class="docs-grid row mt-3">
+        <a class="doc-card fadein" href="docs/sanpin-protocol-sample.pdf" target="_blank">
+          <div class="preview" style="--img:url('images/sanpin/protocol.jpg')"></div>
+          <div class="body">
+            <h3>Протокол лабораторных испытаний</h3>
+            <p>Физико-химия, органолептика, микробиология.</p>
+            <span class="arrow">Открыть PDF</span>
+          </div>
+        </a>
+
+        <a class="doc-card fadein" href="docs/commissioning-checklist.pdf" target="_blank">
+          <div class="preview" style="--img:url('images/sanpin/checklist.jpg')"></div>
+          <div class="body">
+            <h3>Чек-лист ПНР</h3>
+            <p>Промывки, CIP, УФ-доза, ΔP, калибровки датчиков.</p>
+            <span class="arrow">Открыть PDF</span>
+          </div>
+        </a>
+
+        <a class="doc-card fadein" href="docs/monitoring-schedule.pdf" target="_blank">
+          <div class="preview" style="--img:url('images/sanpin/monitoring.jpg')"></div>
+          <div class="body">
+            <h3>График мониторинга</h3>
+            <p>Периодичность проб, сервисные визиты, точки отбора.</p>
+            <span class="arrow">Открыть PDF</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="badges fadein" aria-label="Значки доверия">
+        <span class="badge">Документы в день запуска</span>
+        <span class="badge">Копии в облаке</span>
+        <span class="badge">Регламент обслуживания</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Сравнение с бутилированной -->
+  <section class="section">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">СРАВНЕНИЕ</div>
+        <h2 class="h2">Сравниваем с бутилированной водой</h2>
+        <p class="sub">Для наглядности делаем сравнительную таблицу по ключевым показателям и вкусовому профилю.</p>
+      </div>
+
+      <div class="table-wrap fadein" role="table" aria-label="Сравнение воды">
+        <div class="table-head" role="rowgroup">
+          <div class="th" role="columnheader">Параметр</div>
+          <div class="th" role="columnheader">После системы</div>
+          <div class="th" role="columnheader">Бутилированная (референс)</div>
+          <div class="th" role="columnheader">Норма (ориентир)</div>
+        </div>
+        <div class="table-body" role="rowgroup">
+          <div class="tr" role="row">
+            <div class="td">Мутность</div>
+            <div class="td ok">в норме</div>
+            <div class="td">в норме</div>
+            <div class="td">в норме</div>
+          </div>
+          <div class="tr" role="row">
+            <div class="td">Проводимость / TDS</div>
+            <div class="td">настроено под профиль</div>
+            <div class="td">средний TDS</div>
+            <div class="td">в норме</div>
+          </div>
+          <div class="tr" role="row">
+            <div class="td">Жёсткость</div>
+            <div class="td ok">мягкая</div>
+            <div class="td">мягкая/средняя</div>
+            <div class="td">в норме</div>
+          </div>
+          <div class="tr" role="row">
+            <div class="td">pH</div>
+            <div class="td">по ТЗ</div>
+            <div class="td">7.2–7.8 (реф.)</div>
+            <div class="td">в норме</div>
+          </div>
+          <div class="tr" role="row">
+            <div class="td">Микробиология</div>
+            <div class="td ok">соответствует</div>
+            <div class="td">соответствует</div>
+            <div class="td">отсутствие</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass note fadein">
+        <strong>Примечание:</strong> числовые значения и конкретные референсы подставляем под объект и выбранную бутилированную воду для сравнения.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">FAQ</div>
+        <h2 class="h2">Частые вопросы о документах и нормативах</h2>
+      </div>
+
+      <div class="faq fadein" role="tablist">
+        <details>
+          <summary>Кто берёт пробы и где оформляются протоколы?</summary>
+          <p>Пробы берут обученные специалисты, протоколы оформляет аккредитованная лаборатория. Скан-копии доступны в личном кабинете.</p>
+        </details>
+        <details>
+          <summary>Как часто сдавать пробы после запуска?</summary>
+          <p>График зависит от объекта. Как правило, контрольные пробы — по регламенту сервиса и при изменениях исходной воды.</p>
+        </details>
+        <details>
+          <summary>Можно ли подтвердить вкус документально?</summary>
+          <p>Органолептика фиксируется в протоколах, а вкусовой профиль подтверждаем дегустацией и параметрами реминерализации.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Финальный CTA: к контактам -->
+  <section class="section cta">
+    <div class="container">
+      <div class="hgroup fadein">
+        <div class="kicker">ГОТОВЫ ПРИСЛАТЬ ОБРАЗЕЦ</div>
+        <h2 class="h2">Получите шаблоны документов и расчёт</h2>
+        <p class="sub">Отправим пример протокола под ваш объект и предварительный бюджет. Ответим на вопросы по нормам.</p>
+        <div class="actions">
+          <a href="contacts.html" class="btn primary">Оставить заявку</a>
+          <a href="services.html" class="btn ghost">Услуги и цены</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="minor">© 2025 Fresh Systems</div>
+      <div class="minor">Москва</div>
+      <a class="minor" href="privacy.html">Политика</a>
+    </div>
+  </footer>
+
+  <!-- JS: меню/анимации -->
+  <script>
+    // Моб. меню
+    (function(){
+      const btn = document.getElementById('menuBtn');
+      const drawer = document.getElementById('drawer');
+      if(!btn||!drawer) return;
+      const toggle = (open)=> {
+        if(open===undefined) open = !drawer.classList.contains('open');
+        drawer.classList.toggle('open', open);
+        drawer.hidden = !open;
+        btn.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('mobile-menu-open', open);
+      };
+      btn.addEventListener('click', (e)=>{e.preventDefault();toggle();});
+      document.addEventListener('click', (e)=>{
+        if(!drawer.classList.contains('open')) return;
+        if(!drawer.contains(e.target) && !btn.contains(e.target)) toggle(false);
+      });
+    })();
+
+    // Плавные появления
+    (function(){
+      const els = document.querySelectorAll('.fadein');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('show');
+        });
+      },{threshold:.18});
+      els.forEach(el=>io.observe(el));
+    })();
+
+    // Параллакс
+    (function(){
+      if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const els=[...document.querySelectorAll('[data-parallax]')];
+      if(!els.length) return; let H=innerHeight, ticking=false;
+      const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
+      const apply=()=>{
+        els.forEach(el=>{
+          const s=parseFloat(el.dataset.speed||'0.15');
+          const r=el.getBoundingClientRect();
+          const c=r.top+r.height/2-H/2;
+          el.style.transform=`translate3d(0, ${clamp(c*s,-36,36)}px, 0)`;
+        }); ticking=false;
+      };
+      addEventListener('scroll', ()=>{ if(!ticking){ ticking=true; requestAnimationFrame(apply);} }, {passive:true});
+      addEventListener('resize', ()=>{H=innerHeight; apply();}, {passive:true});
+      apply();
+    })();
+  </script>
+
+  <!-- Прелоадер -->
+  <script src="preloader.js"></script>
+</body>
+</html>
