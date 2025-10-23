@@ -1,0 +1,33 @@
+/* Локальные стили для «Услуги» */
+.hero-services{
+  min-height:60vh;
+  background:
+    radial-gradient(900px 600px at 12% 8%, rgba(56,189,248,.10), transparent 60%),
+    radial-gradient(1000px 640px at 88% 0%, rgba(125,211,252,.08), transparent 70%);
+}
+
+/* Карточки услуг */
+.svc-card{
+  grid-column: span 4;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px; overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .3s, border-color .25s, background .25s;
+}
+.svc-card:hover{ transform: translateY(-4px); border-color: rgba(56,189,248,.35); background: rgba(255,255,255,.06); }
+.svc-ill{ height: 160px; background: linear-gradient(0deg, rgba(7,11,22,.35), rgba(7,11,22,.35)), var(--img) center/cover no-repeat; }
+.svc-body{ padding: 14px }
+.svc-body h3{ font-size: 18px; margin-bottom: 6px }
+.tags{ list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 6px }
+.tags li{ border:1px solid rgba(56,189,248,.28); background:rgba(56,189,248,.08); color:#bfefff; border-radius:999px; padding:6px 10px; font-size:12px }
+.note{ color:#cfeafb }
+
+/* Гарантия */
+.assurance h3{ font-size:20px; margin-bottom:6px }
+.assurance p{ color:#dbe9f6 }
+
+/* Адаптив */
+@media (max-width:1024px){
+  .svc-card{ grid-column: span 6 }
+}
